@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+//testando
 public class SchoSys extends JFrame implements ActionListener {
 
     // ===== Componentes Gráficos =====
