@@ -10,11 +10,13 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-//testando
 public class SchoSys extends JFrame implements ActionListener {
 
     // ===== Componentes Gráficos =====
@@ -31,6 +33,8 @@ public class SchoSys extends JFrame implements ActionListener {
     private JTextField tfNivelEsc;
     private JTextField tfSerie;
     private JTextField tfSexo; 
+    
+   
     // ================================
     
     // Container de Componentes - AWT
@@ -38,7 +42,7 @@ public class SchoSys extends JFrame implements ActionListener {
     
     // Método Construtor do Frame de Formulário
     public SchoSys() {
-        super("School-System");
+        super("School-System v1.beta");
         
         JPanel painel = new JPanel();
         painel.setPreferredSize(new Dimension(640, 300));
@@ -65,6 +69,7 @@ public class SchoSys extends JFrame implements ActionListener {
         tfNivelEsc = new JTextField( 12 );
         tfSerie = new JTextField( 2 );
         tfSexo = new JTextField( 10 );
+        
         // ===============================
         
         // === Adicionando os componentes ao Frame ===
@@ -115,16 +120,12 @@ public class SchoSys extends JFrame implements ActionListener {
         // Adiciona os botões a lista de eventos de clique
         btCancelar.addActionListener(this);
         btSalvar.addActionListener(this);
-
+        
         //this.setSize( 640, 480 ); // Tamanho do Frame suficiente pros componentes
         this.setResizable( false ); // Tira a opção de maximizar
         this.setVisible( true ); // Apresenta o Frame
     }
     
-    public static void main(String[] args) {
-        SchoSys form = new SchoSys();
-    }
-
     // Tratador de eventos de cliques
     @Override
     public void actionPerformed(ActionEvent e) {
