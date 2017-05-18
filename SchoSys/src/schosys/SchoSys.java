@@ -132,7 +132,7 @@ public class SchoSys extends JFrame implements ActionListener {
         if( e.getSource()== btCancelar) {
             this.setVisible( false );
             JOptionPane.showMessageDialog(this, "Cadastro cancelado!");
-            System.exit( 0 );
+            new MainMenu();
         }
         else if( e.getSource() == btSalvar) {
             salvar();
