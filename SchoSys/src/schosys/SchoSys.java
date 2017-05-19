@@ -143,6 +143,8 @@ public class SchoSys extends JFrame implements ActionListener {
     private void salvar() {
         if( isCamposInconsistentes() ) {
             JOptionPane.showMessageDialog(this, "Cadastro concluído!");
+            this.dispose();
+            new MainMenu();
         }
     }
 
