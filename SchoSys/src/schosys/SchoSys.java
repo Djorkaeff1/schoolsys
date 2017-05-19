@@ -37,7 +37,7 @@ public class SchoSys extends JFrame implements ActionListener {
    
     // ================================
     
-    // Container de Componentes - AWT // teste
+    // Container de Componentes - AWT
     private Container container;
     
     // Método Construtor do Frame de Formulário
