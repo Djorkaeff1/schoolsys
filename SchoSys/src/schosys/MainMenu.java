@@ -4,24 +4,27 @@ package schosys;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JButton;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 public class MainMenu extends JFrame implements ActionListener {
-
-	// ===== Componentes Gráficos =====
-	private JMenuBar barraMenu;
+    
+    // ===== Componentes Gráficos =====
+    private JMenuBar barraMenu;
     private JMenu mnAluno;
     private JMenu mnConsulta;
     private JMenu mnAjuda;
@@ -31,13 +34,13 @@ public class MainMenu extends JFrame implements ActionListener {
     private JMenuItem miRegistro;
     private JMenuItem miAll;
     private JMenuItem miSobre;
-	// ================================
+    // ================================
 
     // Container de Componentes - AWT
     private Container container;
     
     // Método Construtor do Frame de Formulário
-    public MainMenu() {
+    public MainMenu(){
         super("School-System v1.beta");
         
         JPanel painel = new JPanel();
@@ -46,11 +49,13 @@ public class MainMenu extends JFrame implements ActionListener {
         this.add(painel);
         this.pack();
         this.setLocationRelativeTo( null );
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         //container = this.getContentPane(); // Implementa o container ao Frame
         //container.setLayout( new FlowLayout() ); // Seta o layout ajustável
-        painel.setBackground(Color.CYAN); // Seta o fundo do Frame a Cyano
-
+        // ========================
+        
+        
         barraMenu = new JMenuBar();
         mnAluno = new JMenu( "Aluno" );
         mnConsulta = new JMenu( "Consulta" );
@@ -74,27 +79,31 @@ public class MainMenu extends JFrame implements ActionListener {
         mnAjuda.add( miSobre );
 
         miNovo.addActionListener(this);
-      //  btLimpar.addActionListener(this);
+        miSobre.addActionListener(this);
       //  miNovo.addActionListener(this);
       //  miSair.addActionListener(this);
       //  miSobre.addActionListener(this);
         
         this.setJMenuBar(barraMenu);
-
         this.setVisible( true );
         this.setResizable( false );
     }
-
-    public static void main(String[] args) {
-        new MainMenu();
+    
+    public static void main(String[] args){
+        new MainMenu();       
     }
 
     // Tratador de eventos de cliques
     @Override
     public void actionPerformed(ActionEvent e) {
         if( e.getSource()== miNovo) {
-            this.setVisible( false );
+            this.dispose();
             new SchoSys();
         }
+        else if( e.getSource() == miSobre ) {
+           //JOptionPane.showMessageDialog(this, "Programa desenvolvido por Djorkaeff!");
+           new FrameSobre();
+        }
     }
+    
 }

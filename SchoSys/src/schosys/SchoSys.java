@@ -37,7 +37,7 @@ public class SchoSys extends JFrame implements ActionListener {
    
     // ================================
     
-    // Container de Componentes - AWT // teste
+    // Container de Componentes - AWT
     private Container container;
     
     // Método Construtor do Frame de Formulário
@@ -115,7 +115,7 @@ public class SchoSys extends JFrame implements ActionListener {
         painel.add(btSalvar);
         // ===========================================
         
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Dá a função de fechar ao X
+        this.setDefaultCloseOperation( JFrame.DISPOSE_ON_CLOSE ); // Dá a função de fechar ao X
         
         // Adiciona os botões a lista de eventos de clique
         btCancelar.addActionListener(this);
@@ -130,7 +130,7 @@ public class SchoSys extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if( e.getSource()== btCancelar) {
-            this.setVisible( false );
+            this.dispose();
             JOptionPane.showMessageDialog(this, "Cadastro cancelado!");
             new MainMenu();
         }
