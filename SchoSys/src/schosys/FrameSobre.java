@@ -1,4 +1,4 @@
-package schosys;
+package SchoSys.src.schosys;
 
 import java.awt.Container;
 import java.awt.GridLayout;
