@@ -106,6 +106,7 @@ public class MainMenu extends JFrame implements ActionListener {
         }
         else if(e.getSource() == miEditar) {
             System.out.println("EDITAR");
+            //Menu de edição
             new SchoEdit();
         }
         else if( e.getSource() == miSobre ) {
