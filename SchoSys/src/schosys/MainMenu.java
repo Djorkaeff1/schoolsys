@@ -1,5 +1,8 @@
-package schosys;
+package SchoSys.src.schosys;
 
+import SchoSys.src.schosys.SchoEdit;
+import SchoSys.src.schosys.SchoSys;
+import SchoSys.src.schosys.FrameSobre;
 
 import java.awt.Color;
 import java.awt.Container;
@@ -80,6 +83,7 @@ public class MainMenu extends JFrame implements ActionListener {
 
         miNovo.addActionListener(this);
         miSobre.addActionListener(this);
+        miEditar.addActionListener(this);
       //  miNovo.addActionListener(this);
       //  miSair.addActionListener(this);
       //  miSobre.addActionListener(this);
@@ -99,12 +103,14 @@ public class MainMenu extends JFrame implements ActionListener {
         if( e.getSource()== miNovo) {
             this.dispose();
             new SchoSys();
-        } else if(e.getSource() == miEditar) {
-            this.setVisible(false);
-            //new SchoEdit();
+        }
+        else if(e.getSource() == miEditar) {
+            System.out.println("EDITAR");
+            new SchoEdit();
         }
         else if( e.getSource() == miSobre ) {
            //JOptionPane.showMessageDialog(this, "Programa desenvolvido por Djorkaeff!");
+           System.out.println("HELP");
            new FrameSobre();
         }
     }
